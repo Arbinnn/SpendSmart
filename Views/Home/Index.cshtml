@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold tex">Welcome to SpendSmart</h1>
+        <br /> 
+
+        <p class="lead text-secondary">
+            Your all-in-one solution to tracking expenses, managing budgets, and achieving financial clarity.
+        </p>
+        <p class="text-muted">
+            Whether you're saving for a big goal or just keeping tabs on daily spending, SpendSmart has you covered.
+        </p>
+
+        <br />
+        <a asp-action="CreateEditExpense" class="btn btn-outline-success btn-lg px-5 shadow">
+            <i class="bi bi-pencil-square"></i> Start Tracking Now
+        </a>
+    </div>
+    <br />
+    <!-- Features Section -->
+    <hr />
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="p-4 shadow-sm rounded-3">
+                <i class="bi bi-bar-chart-line-fill text-success display-4 mb-3"></i>
+                <h4 class="fw-bold">Track Your Expenses</h4>
+                <p class="text-muted">
+                    Keep a detailed record of your spending with categorized expense tracking.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 shadow-sm rounded-3">
+                <i class="bi bi-wallet-fill text-warning display-4 mb-3"></i>
+                <h4 class="fw-bold">Manage Budgets</h4>
+                <p class="text-muted">
+                    Set budgets for categories and stay on top of your finances with insightful analytics.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 shadow-sm rounded-3">
+                <i class="bi bi-graph-up-arrow text-primary display-4 mb-3"></i>
+                <h4 class="fw-bold">Gain Financial Clarity</h4>
+                <p class="text-muted">
+                    Visualize your spending habits and make informed financial decisions effortlessly.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <br />
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center mt-5">
+        <a asp-action="Expenses" class="btn btn-dark btn-lg px-5 me-3 shadow">
+             View All Expenses
+        </a>
+        <a asp-action="CreateEditExpense" class="btn btn-secondary btn-lg px-5 shadow">
+            Add a New Expense
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted mt-5 pt-5 border-top">
+        <p class="mb-1">&copy; @DateTime.Now.Year SpendSmart. All rights reserved.</p>
+    </footer>
+</div>

@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Expense";
+}
+@model List<Expenses>
+
+<div class="text-center">
+    <h1 class="display-4">Expenses</h1>
+
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Value
+                </th>
+                <th>
+                    Description
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                foreach( var x in Model){
+                    <tr>
+                        <td>
+                            @x.Id
+                        </td>
+
+                        <td>
+                            @x.Value
+                        </td>
+
+                        <td>
+                            @x.description
+                        </td>
+
+                        <td>
+                            <a class="btn btn-outline-info" asp-action="CreateEditExpense" asp-route-id="@x.Id">Edit</a>
+                            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@x.Id">Delete</a>
+                        </td>
+                    </tr>
+
+
+
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <hr />
+    <br />
+
+    <h5> 
+        <label>Total Expenses ($):</label>
+        @{
+            // int count = 0;
+            double sum = 0;
+            // decimal [] y= new decimal[Model.Count];
+            foreach(var x in Model){
+
+                // y[count] = x.Value;
+                // count++;
+                sum = sum + x.Value;
+            }
+           
+        }
+        <p>@sum</p>
+
+    </h5>
+
+    <a class="btn btn-primary" asp-action="CreateEditExpense">Add new Item</a>
+    
+</div>
